@@ -1,0 +1,24 @@
+- id: commit
+  execute-command: sh
+  command-working-directory: test
+  include-command-output-in-response: true
+  pass-arguments-to-command:
+    - source: string
+      name: -c
+    - source: string
+      name: hg pull && hg update default
+  trigger-rule:
+    and:
+      - match:
+          type: value
+          value: branch
+          parameter:
+            source: payload
+            name: push.changes.new.type
+      - match:
+          type: value
+          value: default
+          parameter:
+            source: payload
+            name: push.changes.new.name
+  trigger-rule-mismatch-http-response-code: 404

@@ -1,0 +1,9 @@
+[Unit]
+Description=Webhook Server
+
+[Service]
+ExecStart=/usr/local/bin/webhook -port "%i" -hooks webhook.yaml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
