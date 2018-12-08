@@ -2,7 +2,7 @@
 Description=Webhook Server
 
 [Service]
-ExecStart=/usr/local/bin/webhook -port "%i" -hooks webhook.yaml
+ExecStart=/usr/local/bin/webhook -port %i -hooks webhook_%i.yaml
 Restart=on-failure
 
 [Install]
