@@ -11,6 +11,12 @@
     and:
       - match:
           type: value
+          value: repo:push
+          parameter:
+            source: header
+            name: X-Event-Key
+      - match:
+          type: value
           value: named_branch
           parameter:
             source: payload
