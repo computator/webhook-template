@@ -16,7 +16,7 @@
 						"value": "named_branch",
 						"parameter": {
 							"source": "payload",
-							"name": "push.changes.new.type"
+							"name": "push.changes.0.new.type"
 						}
 					}
 				},
@@ -26,10 +26,10 @@
 						"value": "default",
 						"parameter": {
 							"source": "payload",
-							"name": "push.changes.new.name"
+							"name": "push.changes.0.new.name"
 						}
 					}
-				},
+				}
 			]
 		},
 		"trigger-rule-mismatch-http-response-code": 404
