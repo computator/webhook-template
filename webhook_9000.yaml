@@ -1,12 +1,10 @@
 - id: gh_commit
-  execute-command: sh
+  execute-command: git
   command-working-directory: test
   include-command-output-in-response: true
   pass-arguments-to-command:
     - source: string
-      name: -c
-    - source: string
-      name: hg pull && hg update default
+      name: pull
   trigger-rule:
     and:
       - match:
@@ -16,14 +14,14 @@
             source: header
             name: X-GitHub-Event
       - match:
-          type: payload-hash-sha1
+          type: payload-hmac-sha256
           secret: secretkey
           parameter:
             source: header
-            name: X-Hub-Signature
+            name: X-Hub-Signature-256
       - match:
           type: value
-          value: refs/heads/master
+          value: refs/heads/main
           parameter:
             source: payload
             name: ref
