@@ -25,4 +25,4 @@
           parameter:
             source: payload
             name: ref
-  trigger-rule-mismatch-http-response-code: 404
+  # trigger-rule-mismatch-http-response-code: 404
