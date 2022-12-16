@@ -2,6 +2,7 @@
   execute-command: git
   command-working-directory: test
   include-command-output-in-response: true
+  include-command-output-in-response-on-error: true
   pass-arguments-to-command:
     - source: string
       name: pull
